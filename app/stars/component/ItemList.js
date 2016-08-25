@@ -4,11 +4,11 @@
 import React from 'react';
 import ReactNative from 'react-native';
 
-
+import ItemCell from './ItemCell'
 import StarStyles from '../StarStyles';
 
 const {Component, PropTypes} = React;
-const {ListView, Text, View}=ReactNative;
+const {ListView, Text, View, WebView}=ReactNative;
 
 const REQUEST_URL = 'https://api.github.com/search/repositories?q=react+native&sort=stars&order=desc';
 
@@ -52,7 +52,15 @@ class ItemList extends Component {
     }
 
     handleRenderItemView(item) {
-        return <Text>{item.full_name}</Text>
+        return <ItemCell item={item} onSelect={() => this.handleSelectItem(item)}/>
+    }
+
+    handleSelectItem(item) {
+        this.props.navigator.push({
+            title: item.full_name,
+            component: WebView,
+            passProps: {source: {uri: item.html_url}},
+        });
     }
 
 }

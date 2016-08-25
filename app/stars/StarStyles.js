@@ -5,7 +5,7 @@ const StarStyles = StyleSheet.create({
         flex: 1,
     },
     listView: {
-        marginTop: 65,
+        marginTop: 50,
         marginBottom: 10,
         backgroundColor: '#FFFFFF',
     },
@@ -46,6 +46,9 @@ const StarStyles = StyleSheet.create({
         width: 60,
         height: 60,
         borderRadius: 30,
+    },
+    touchHighlight: {
+        backgroundColor: '#87cefa',
     },
 });
 

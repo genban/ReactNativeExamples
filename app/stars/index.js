@@ -14,6 +14,7 @@ class ReactNativeStars extends Component {
         const defaultRouteConfig = {
             title: "React Native Stars",
             component: ItemList,
+            backButtonTitle: "Back",
         };
 
         return <NavigatorIOS style={StarStyles.navigator} initialRoute={defaultRouteConfig}/>
